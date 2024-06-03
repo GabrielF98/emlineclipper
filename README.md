@@ -14,4 +14,5 @@ Within the chunk, residuals between the spline and the original spectrum outside
 
 This is performed iteratively from the blue end of the spectrum for each pair of bounding lines.
 
-[clipping_line4916.pdf](https://github.com/user-attachments/files/15538799/clipping_line4916.pdf)
+
+<img width="689" alt="Screenshot 2024-06-03 at 20 32 07" src="https://github.com/GabrielF98/emlineclipper/assets/72733933/db10db5b-ad43-4b91-b465-bdde36b51e6e">
