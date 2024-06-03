@@ -6,7 +6,7 @@ The code takes a spectrum from the user and plots it. It then asks the user to d
 
 On each click, a line is drawn. Every pair of clicks is assumed to bracket a line that needs to be removed, these are called bounding lines. Groups of emission lines can be bounded using just two bounding lines if they are sufficiently close.
 
-The code then iterates over each pair of bounding lines. The code selects a chunk of the flux array +/-100$\AA$ away from the lower/upper bounding lines by default.
+The code then iterates over each pair of bounding lines. The code selects a chunk of the flux array +/-100Å away from the lower/upper bounding lines by default.
 
 Values within the bounding lines in this chunk are removed before performing a spline fit to the flux (with 5 knots by default).
 
