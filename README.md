@@ -18,4 +18,4 @@ The code returns the array of flux with the emission lines removed and resampled
 
 **Note:** Even when a line has been fit, the code performs the next for the next line on the original spectrum, i.e. without removing the previously fit line.
 
-<img width="689" alt="Screenshot 2024-06-03 at 20 32 07" src="https://github.com/GabrielF98/emlineclipper/assets/72733933/db10db5b-ad43-4b91-b465-bdde36b51e6e">
+<img width="794" alt="Screenshot 2024-06-04 at 16 20 23" src="https://github.com/GabrielF98/emlineclipper/assets/72733933/6f2493ba-fcb4-46dc-844a-20ee08509644">
