@@ -180,7 +180,7 @@ def main():
     emlines = define_regions(wlen, flux)
     new_flux = clip_lines(wlen, flux, emlines, verbose=True)
 
-    plt.figure()s
+    plt.figure()
     plt.plot(wlen, flux, label='Input')
     plt.plot(wlen, flux-new_flux, label='Clipped', color='tab:green')
     plt.xlabel('Wavelength [$\AA$]')
