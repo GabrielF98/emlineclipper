@@ -118,7 +118,6 @@ def clip_line(wlen, flux, line_lower, line_upper, emline_list, verbose=False, pa
 
     # Fit a cubic spline with KNOTS knots to the data
     t = np.linspace(line_lower-DELTA, line_upper+DELTA, KNOTS)[1:-1]
-    print(wlen_zoom_nan_clean, flux_zoom_nan_clean)
     spl = interpolate.splrep(wlen_zoom_nan_clean, flux_zoom_nan_clean, t=t)
     xnew = np.linspace(line_lower-DELTA, line_upper+DELTA)
     spl_eval = interpolate.splev(xnew, spl)
