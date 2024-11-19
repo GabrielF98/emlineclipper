@@ -1,5 +1,5 @@
 # emlineclipper
-Python library to clip emission lines in Supernova spectra.
+Python library to clip emission lines in supernova spectra. Developed by Gabriel Finneran at University College Dublin, Ireland. A full description of the tool is given here, and may also be found in [Finneran et al. (2024)](https://arxiv.org/abs/2411.11503). See below for how to cite this work!
 
 # How it works
 The code takes a spectrum from the user and plots it. It then asks the user to double click the plot at the edges of emission lines to remove.
@@ -19,3 +19,28 @@ The code returns the array of flux with the emission lines removed and resampled
 **Note:** Even when a line has been fit, the code performs the next for the next line on the original spectrum, i.e. without removing the previously fit line.
 
 <img width="794" alt="Screenshot 2024-06-04 at 16 20 23" src="https://github.com/GabrielF98/emlineclipper/assets/72733933/6f2493ba-fcb4-46dc-844a-20ee08509644">
+
+# Citation information
+If you use emlineclipper in your work, please consider citing  (see below for bibtex). I would also appreciated if you could add an acknowledgement such as:
+
+```
+This work has made use of \texttt{emlineclipper}, developed by Gabriel Finneran and available at: \url{https://github.com/GabrielF98/emlineclipper}
+```
+
+```
+@ARTICLE{2024arXiv241111503F,
+       author = {{Finneran}, Gabriel and {Cotter}, Laura and {Martin-Carrillo}, Antonio},
+        title = "{Velocity evolution of broad-line Ic supernovae with and without gamma-ray bursts}",
+      journal = {arXiv e-prints},
+     keywords = {Astrophysics - High Energy Astrophysical Phenomena},
+         year = 2024,
+        month = nov,
+          eid = {arXiv:2411.11503},
+        pages = {arXiv:2411.11503},
+archivePrefix = {arXiv},
+       eprint = {2411.11503},
+ primaryClass = {astro-ph.HE},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv241111503F},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+```
