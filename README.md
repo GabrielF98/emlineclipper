@@ -1,6 +1,8 @@
 # emlineclipper
 Python library to clip emission lines in supernova spectra. Developed by Gabriel Finneran at University College Dublin, Ireland. A full description of the tool is given here, and may also be found in [Finneran et al. (2024)](https://arxiv.org/abs/2411.11503). See below for how to cite this work!
 
+You can also contact me at gabfin15@gmail.com
+
 # How it works
 The code takes a spectrum from the user and plots it. It then asks the user to double click the plot at the edges of emission lines to remove.
 
