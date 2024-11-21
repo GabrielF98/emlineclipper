@@ -4,9 +4,9 @@
 
 Python library to clip emission lines in supernova spectra. Developed by Gabriel Finneran at University College Dublin, Ireland.
 
-Full documentation is available at [readthedocs](https://emlineclipper.readthedocs.io/en/latest/>). Further information may be found in [Finneran et al. (2024)](https://arxiv.org/abs/2411.11503) (see below for details on how to cite this work!).
+Full documentation is available at [readthedocs](https://emlineclipper.readthedocs.io/en/latest/). Further information may be found in [Finneran et al. (2024)](https://arxiv.org/abs/2411.11503) (see below for details on how to cite this work!).
 
-This package can be installed from [PyPI](https://pypi.org/project/emlineclipper/>) using pip:
+This package can be installed from [PyPI](https://pypi.org/project/emlineclipper/) using pip:
 
 ```
 pip install emlineclipper
@@ -33,6 +33,8 @@ The code returns the array of flux with the emission lines removed and resampled
 
 <img width="794" alt="Screenshot 2024-06-04 at 16 20 23" src="https://github.com/GabrielF98/emlineclipper/assets/72733933/6f2493ba-fcb4-46dc-844a-20ee08509644">
 
+Spectra of SN1997ef from the Weizmann Interactive Supernova Data Repository [WISeREP](https://www.wiserep.org/object/4567)
+
 # How to cite this code in your work
 If you use emlineclipper in your work, please consider citing  (see below for bibtex). I would also appreciated if you could add an acknowledgement such as:
 
@@ -57,6 +59,3 @@ archivePrefix = {arXiv},
       adsnote = {Provided by the SAO/NASA Astrophysics Data System}
 }
 ```
-
-# Sources for the spectra
-Spectra of SN1997ef from the Weizmann Interactive Supernova Data Repository [WISeREP](https://www.wiserep.org/object/4567)
