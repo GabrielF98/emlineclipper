@@ -23,7 +23,7 @@ The code takes a spectrum from the user and plots it. It then asks the user to d
 
 On each click, a line is drawn. Every pair of clicks is assumed to bracket a line that needs to be removed, these are called bounding lines. Groups of emission lines can be bounded using just two bounding lines, provided they are sufficiently close (a couple of samples apart).
 
-The code then iterates over each pair of bounding lines. The code selects a chunk of the input flux array +/-100Å away from the lower/upper bounding lines by default.
+The code then iterates over each pair of bounding lines. The code selects a chunk of the input flux array +/-100 Å away from the lower/upper bounding lines by default.
 
 Values within the bounding lines in this chunk are removed before performing a spline fit to the flux (with 5 knots by default). If other user-defined emission lines are present in the fitting window, they are removed as well. 
 
@@ -80,6 +80,9 @@ Spectra of SN1997ef from the Weizmann Interactive Supernova Data Repository `WIS
 
 Example
 =======
+This tutorial uses a spectrum of SN1997ef (WISeREP). This spectrum can be downloaded here:
+
+.. _spectrum: _static
 
 
 Module documentation
