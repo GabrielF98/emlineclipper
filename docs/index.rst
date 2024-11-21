@@ -3,15 +3,28 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-emlineclipper documentation
-===========================
+emlineclipper
+=============
 
-.. image:: https://img.shields.io/github/v/release/GabrielF98/emlineclipper?color=teal
+.. |GitHub Release| image:: https://img.shields.io/github/v/release/GabrielF98/emlineclipper?color=teal
    :alt: GitHub Release
+
+.. |Publish with PyPI| image:: https://github.com/GabrielF98/emlineclipper/actions/workflows/python-publish.yml/badge.svg
+   :target: https://github.com/GabrielF98/emlineclipper/actions/workflows/python-publish.yml
+   :alt: Publish with PyPI
+
+|GitHub Release| |Publish with PyPI|
 
 Python library to clip emission lines in supernova spectra. Developed by Gabriel Finneran at University College Dublin, Ireland. 
 
-A brief description of the tool is given here. Further information may be found in `Finneran et al. (2024) <https://arxiv.org/abs/2411.11503>`_ (see below for how to cite this work!).
+A brief description of the tool is given here. Full documentation is available at `readthedocs <https://emlineclipper.readthedocs.io/en/latest/>`_. Further information may be found in `Finneran et al. (2024) <https://arxiv.org/abs/2411.11503>`_ (see below for how to cite this work!).
+
+This package can be installed from `PyPI <https://pypi.org/project/emlineclipper/>`_ using pip:
+
+.. code-block:: bash
+
+    pip install emlineclipper
+
 
 The source code can be found on `GitHub <https://github.com/GabrielF98/emlineclipper>`_. Issues can be logged `here <https://github.com/GabrielF98/emlineclipper/issues>`_.
 
@@ -37,7 +50,7 @@ If you use emlineclipper in your work, please consider citing `Finneran et al. (
    this work has made use of \texttt{emlineclipper}, 
    developed by Gabriel Finneran and available at: 
    \url{https://github.com/GabrielF98/emlineclipper}.
-
+   
 .. code-block:: bibtex
 
    @article{2024arXiv241111503F,
