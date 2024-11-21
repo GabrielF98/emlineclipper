@@ -61,7 +61,7 @@ The code returns the array of flux with the emission lines removed and resampled
 
 **Note:** Even when a line has been fit, the code performs the next for the next line on the original spectrum, i.e. without removing the previously fit line.
 
-.. image:: _static/example.png
+.. image:: _static/example1.png
   :width: 794
   :alt: Example of emission line removal.
 

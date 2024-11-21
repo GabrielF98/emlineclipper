@@ -3,13 +3,6 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-   
-   example
-   api
-
 emlineclipper documentation
 ===========================
 
@@ -27,6 +20,10 @@ You can also contact me at `by email <mailto:gabfin15@gmail.com>`_.
 .. image:: _static/example.png
   :width: 794
   :alt: Example of emission line removal.
+
+.. image:: _static/example1.png
+   :width: 794
+   :alt: Example of emission line removal.
 
 Spectra of SN1997ef from the Weizmann Interactive Supernova Data Repository `WISeREP <https://www.wiserep.org/object/4567>`_.
 
@@ -59,3 +56,9 @@ If you use emlineclipper in your work, please consider citing `Finneran et al. (
          adsnote = {Provided by the SAO/NASA Astrophysics Data System},
    }
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+   
+   example
+   api

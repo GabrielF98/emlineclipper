@@ -1,7 +1,7 @@
 """
 Take an input wavelength and flux.
 Ask the user to choose the regions to clip.
-Define a region in which to perform fiting. By default 100 A either side of users emission line choice.
+Define a region in which to perform fiting. By default 100 Å either side of users emission line choice.
 Compute spline fit using data in the fitting region.
 Produce the residual spectrum between the spline and the original spectrum in the fitting region.
 Compute the mean and variance of the residual spectrum.
@@ -219,6 +219,7 @@ def clip_line(
         ax[2].set_ylabel("Flux [arb. units]")
         ax[2].legend()
 
+        plt.tick_params(direction="in")
         plt.show()
         if path is not None:
             fig.savefig(
@@ -262,7 +263,7 @@ def main():
     wlen = data["wave"].to_numpy()
     flux = data["flux"].to_numpy()
     emlines = define_regions(wlen, flux)
-    flux_clipd = clip_lines(wlen, flux, emlines)
+    flux_clipd = clip_lines(wlen, flux, emlines, verbose=True)
     data.loc[:, "flux_clipd"] = flux_clipd
 
     data.to_csv(
@@ -280,6 +281,8 @@ def main():
     plt.xlim([min(wlen), max(wlen)])
     plt.ylim([np.percentile(flux, 5) * 0.5, 1.5 * np.percentile(flux, 95)])
     plt.legend()
+    plt.tick_params(direction="in")
+    plt.savefig("example.pdf")
     plt.show()
 
 
