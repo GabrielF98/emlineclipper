@@ -1,8 +1,8 @@
 """
 Take an input wavelength and flux.
 Ask the user to choose the regions to clip.
-Define a region in which to perform fiting. By default 100 A either side of users emission line choice.
-Compute spline fit using data in the fitting region.
+Define a region in which to perform fiting. By default 100 Å either side of users emission line choice.
+Compute spline fit using data in the fitting region.s
 Produce the residual spectrum between the spline and the original spectrum in the fitting region.
 Compute the mean and variance of the residual spectrum.
 Sample from a Gaussian distribution with this mean and std dev to create the noise for the selected region.
@@ -24,11 +24,14 @@ def click_regions(event, fig, ax, emlines):
     Plots a vertical line at the location of the user's click.
     Appends the wavelength of this line to the emlines list.
 
-    Args:
-        event (matplotlib.backend_bases.MouseEvent): mouse click event.
-        fig (matplotlib.figure.Figure): matplotlib figure on which to draw the lines.
-        ax (matplotlib.Axes): axis accompanying the matplotlib figure.
-        emlines (list): list of emline locations, which will be added to each time this function is used.
+    :param event: Mouse click event.
+    :type event: matplotlib.backend_bases.MouseEvent
+    :param fig: matplotlib figure on which to draw the lines.
+    :type fig: matplotlib.figure.Figure
+    :param ax: matplotlib axis accompanying the matplotlib figure.
+    :type ax: matplotlib.Axes
+    :param emlines: List of emline locations, which will be added to each time this function is used.
+    :type emlines: list
     """
 
     if event.dblclick:
@@ -48,12 +51,13 @@ def define_regions(wlen, flux):
     """
     Creates the plot where the user can double click to set the bounding regions of emission lines.
 
-    Args:
-        wlen (numpy.ndarray): Wavelength array.
-        flux (numpy.ndarray): Flux array.
+    :param wlen: Wavelength array.
+    :type wlen: numpy.ndarray
+    :param flux: Flux array.
+    :type flux: numpy.ndarray
 
-    Returns:
-        emlines (list): list of emission line bounding wavelengths.
+    :return: List of emission line bounding wavelengths.
+    :rtype: list
     """
 
     emlines = []
@@ -75,15 +79,19 @@ def find_adjacent_emlines(
     Find out if there are other emlines near the emline which is being removed.
     If there are then set their values to NaN so that they do not affect the fit for the emline in question (mean, stddev etc.).
 
-    Args:
-        emline_list (list): Full list of emline bounding lines.
-        line_lower (float): The lower wavelength of the line to be removed.
-        line_upper (float): The upper wavelength of the line to be removed.
-        wlen_zoom (numpy.ndarray): An wavelength array 100 A either side of the emission line being removed.
-        flux_zoom_nan (_type_): Spectral flux array corresponding to the wavelengths in wlen_zoom.
+    :param emline_list: Full list of emline bounding lines.
+    :type emline_list: list
+    :param line_lower: The lower wavelength of the line to be removed.
+    :type line_lower: float
+    :param line_upper: The upper wavelength of the line to be removed.
+    :type line_upper: float
+    :param wlen_zoom: An wavelength array 100 Åeither side of the emission line being removed.
+    :type wlen_zoom: numpy.ndarray
+    :param flux_zoom_nan: Spectral flux array corresponding to the wavelengths in wlen_zoom.
+    :type flux_zoom_nan: numpy.ndarray
 
-    Returns:
-        _type_: An array of fluxes within 100 A of the emission line in question, where fluxes of other emission lines are set to NaN so they do not impact removal of the line in question.
+    :return: An array of fluxes within 100 Åof the emission line in question, where fluxes of other emission lines are set to NaN so they do not impact removal of the line in question.
+    :rtype: numpy.ndarray
     """
 
     new_emline_list = emline_list.copy()
@@ -131,17 +139,23 @@ def clip_line(
     Plot and save figures if verbose==True.
     Return the new section of flux in the region of the emission line.
 
-    Args:
-        wlen (numpy.ndarray): Wavelength array. Taken from the input spectrum.
-        flux (numpy.ndarray): Flux array. Taken from the input spectrum.
-        line_lower (float): The lower wavelength of the line to be removed.
-        line_upper (float): The upper wavelength of the line to be removed.
-        emline_list (list): Full list of emline bounding lines.
-        verbose (bool, optional): Flag indicating whether to save a figure of the spectrum near each emission line removal. Defaults to False.
-        path (_type_, optional): Output path for figures. Defaults to None.
+    :param wlen: Wavelength array. Taken from the input spectrum.
+    :type wlen: numpy.ndarray
+    :param flux: Flux array. Taken from the input spectrum.
+    :type flux: numpy.ndarray
+    :param line_lower: The lower wavelength of the line to be removed.
+    :type line_lower: float
+    :param line_upper (float): The upper wavelength of the line to be removed.
+    :type line_upper: float
+    :param emline_list: Full list of emline bounding lines.
+    :type emline_list: list
+    :param verbose: Flag indicating whether to save a figure of the spectrum near each emission line removal. Defaults to False.
+    :type verbose: bool, optional
+    :param path: Output path for figures. Defaults to None.
+    :type path: str, optional
 
-    Returns:
-        new_spec_sections numpy.ndarray: corrected spectrum in the zoomed region around the emission line.
+    :return: The corrected spectrum in the zoomed region around the emission line.
+    :rtype: numpy.ndarray
     """
 
     # Zoom in to DELTA angstroms either side of the line.
@@ -202,7 +216,7 @@ def clip_line(
             "o",
             color="tab:orange",
             markersize=2,
-            label="Redisuals",
+            label="Residuals",
         )
         ax[1].set_xlim([line_lower - DELTA - 200, line_upper + DELTA + 200])
         ax[1].set_ylabel("Flux [arb. units]")
@@ -219,6 +233,7 @@ def clip_line(
         ax[2].set_ylabel("Flux [arb. units]")
         ax[2].legend()
 
+        plt.tick_params(direction="in")
         plt.show()
         if path is not None:
             fig.savefig(
@@ -237,13 +252,15 @@ def clip_lines(wlen, flux, emline_list, *args, **kwargs):
     Use the result of clip line to update the flux_clipd vector.
     Return the clipped spectrum.
 
-    Args:
-        wlen (numpy.ndarray): Wavelength array. Taken from the input spectrum.
-        flux (numpy.ndarray): Flux array. Taken from the input spectrum.
-        emline_list (list): Full list of emline bounding lines.
+    :param wlen: Wavelength array. Taken from the input spectrum.
+    :type wlen: numpy.ndarray
+    :param flux: Flux array. Taken from the input spectrum.
+    :type wlen: numpy.ndarray
+    :param emline_list: Full list of emline bounding lines.
+    :type emline_list: list
 
-    Returns:
-        flux_clipd (numpy.ndarray): An array containing the spectrum with emission lines removed.
+    :return flux_clipd: An array containing the spectrum with emission lines removed.
+    :rtype: numpy.ndarray
     """
 
     flux_clipd = flux.copy()
@@ -261,9 +278,8 @@ def main():
     data = pd.read_csv("1997ef_1998-01-28_00-00-00_Lick-3m_KAST_SUSPECT.dat", sep=",")
     wlen = data["wave"].to_numpy()
     flux = data["flux"].to_numpy()
-    # emlines = define_regions(wlen, flux)
-    emlines = [6770, 6838]
-    flux_clipd = clip_lines(wlen, flux, emlines)
+    emlines = define_regions(wlen, flux)
+    flux_clipd = clip_lines(wlen, flux, emlines, verbose=True)
     data.loc[:, "flux_clipd"] = flux_clipd
 
     data.to_csv(
@@ -281,6 +297,8 @@ def main():
     plt.xlim([min(wlen), max(wlen)])
     plt.ylim([np.percentile(flux, 5) * 0.5, 1.5 * np.percentile(flux, 95)])
     plt.legend()
+    plt.tick_params(direction="in")
+    plt.savefig("example.pdf")
     plt.show()
 
 
