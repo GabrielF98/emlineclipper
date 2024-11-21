@@ -261,8 +261,7 @@ def main():
     data = pd.read_csv("1997ef_1998-01-28_00-00-00_Lick-3m_KAST_SUSPECT.dat", sep=",")
     wlen = data["wave"].to_numpy()
     flux = data["flux"].to_numpy()
-    # emlines = define_regions(wlen, flux)
-    emlines = [6770, 6838]
+    emlines = define_regions(wlen, flux)
     flux_clipd = clip_lines(wlen, flux, emlines)
     data.loc[:, "flux_clipd"] = flux_clipd
 

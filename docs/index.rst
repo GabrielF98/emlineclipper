@@ -3,6 +3,13 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+   
+   example
+   api
+
 emlineclipper documentation
 ===========================
 
@@ -17,28 +24,11 @@ The source code can be found on `GitHub <https://github.com/GabrielF98/emlinecli
 
 You can also contact me at `by email <mailto:gabfin15@gmail.com>`_.
 
-How it works
-------------
-The code takes a spectrum from the user and plots it. It then asks the user to double click the plot at the edges of emission lines to remove.
-
-On each click, a line is drawn. Every pair of clicks is assumed to bracket a line that needs to be removed, these are called bounding lines. Groups of emission lines can be bounded using just two bounding lines, provided they are sufficiently close (a couple of samples apart).
-
-The code then iterates over each pair of bounding lines. The code selects a chunk of the input flux array +/-100 Å away from the lower/upper bounding lines by default.
-
-Values within the bounding lines in this chunk are removed before performing a spline fit to the flux (with 5 knots by default). If other user-defined emission lines are present in the fitting window, they are removed as well. 
-
-Within the chunk, residuals between the spline and the original spectrum outside the bounding lines are computed. The mean and standard deviation of the difference array is calculated. This is used to resample the spectrum by adding noise to the spline between the bounding lines.
-
-This is performed iteratively from the blue end of the spectrum for each pair of bounding lines.
-
-The code returns the array of flux with the emission lines removed and resampled using hte uncertainty arrays generated during fitting.
-
-**Note:** Even when a line has been fit, the code performs the next for the next line on the original spectrum, i.e. without removing the previously fit line.
-
-.. image:: ../static/example.png
+.. image:: _static/example.png
   :width: 794
   :alt: Example of emission line removal.
 
+Spectra of SN1997ef from the Weizmann Interactive Supernova Data Repository `WISeREP <https://www.wiserep.org/object/4567>`_.
 
 How to cite this code in your work
 ----------------------------------
@@ -69,23 +59,3 @@ If you use emlineclipper in your work, please consider citing `Finneran et al. (
          adsnote = {Provided by the SAO/NASA Astrophysics Data System},
    }
 
-Sources for the example spectra
--------------------------------
-Spectra of SN1997ef from the Weizmann Interactive Supernova Data Repository `WISeREP <https://www.wiserep.org/object/4567>`_.
-
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-Example
-=======
-This tutorial uses a spectrum of SN1997ef (WISeREP). This spectrum can be downloaded here:
-
-.. _spectrum: _static
-
-
-Module documentation
-====================
-.. automodule:: emclip
-   :members:
