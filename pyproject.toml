@@ -4,11 +4,11 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "emlineclipper"
-version = "0.1.1"
+version = "1.1.1"
 authors = [
   { name="Gabriel Finneran", email="gabfin15@gmail.com" },
 ]
-description = "A tool for the removal of emission lines from supernova spectra."
+description = "A tool for the removal of emission lines from supernova spectra. Follows Finneran et al. (2024). See: https://arxiv.org/abs/2411.11503."
 readme = "README.md"
 requires-python = ">=3.11"
 classifiers = [
@@ -16,6 +16,10 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+
+dynamic = ["dependencies"]
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
 
 [project.urls]
 Homepage = "https://github.com/GabrielF98/emlineclipper"

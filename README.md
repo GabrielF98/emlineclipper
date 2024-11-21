@@ -1,7 +1,7 @@
 # emlineclipper
 Python library to clip emission lines in supernova spectra. Developed by Gabriel Finneran at University College Dublin, Ireland. A full description of the tool is given here, and may also be found in [Finneran et al. (2024)](https://arxiv.org/abs/2411.11503). See below for how to cite this work!
 
-You can also contact me at gabfin15@gmail.com
+You can also contact me at gabfin15@gmail.com.
 
 # How it works
 The code takes a spectrum from the user and plots it. It then asks the user to double click the plot at the edges of emission lines to remove.
@@ -22,7 +22,7 @@ The code returns the array of flux with the emission lines removed and resampled
 
 <img width="794" alt="Screenshot 2024-06-04 at 16 20 23" src="https://github.com/GabrielF98/emlineclipper/assets/72733933/6f2493ba-fcb4-46dc-844a-20ee08509644">
 
-# Citation information
+# How to cite this code in your work
 If you use emlineclipper in your work, please consider citing  (see below for bibtex). I would also appreciated if you could add an acknowledgement such as:
 
 ```
@@ -46,3 +46,6 @@ archivePrefix = {arXiv},
       adsnote = {Provided by the SAO/NASA Astrophysics Data System}
 }
 ```
+
+# Sources for the spectra
+Spectra of SN1997ef from the Weizmann Interactive Supernova Data Repository [WISeREP](https://www.wiserep.org/object/4567)
