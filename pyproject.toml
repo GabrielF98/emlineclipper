@@ -43,7 +43,7 @@ pre_commit_hooks = []
 post_commit_hooks = []
 
 [[tool.bumpversion.files]]
-filename = "pyproject.toml"
+filename = ["pyproject.toml", "docs/conf.py"]
 
 [project.urls]
 Homepage = "https://github.com/GabrielF98/emlineclipper"
