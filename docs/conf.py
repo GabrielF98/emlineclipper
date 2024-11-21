@@ -26,9 +26,9 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 html_theme = "sphinx_rtd_theme"
 html_static_path = ["_static"]
 
-extensions = ["sphinx.ext.autodoc"]
+extensions = ["sphinx_copybutton", "sphinx.ext.autodoc"]
 
 import os
 import sys
 
-sys.path.insert(0, os.path.abspath("../../src/emlineclipper/emclip"))
+sys.path.insert(0, os.path.abspath("../src/emlineclipper"))
