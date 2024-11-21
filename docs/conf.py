@@ -9,7 +9,7 @@
 project = "emlineclipper"
 copyright = "2024, Gabriel Finneran"
 author = "Gabriel Finneran"
-release = "1.1.2"
+release = "1.1.1"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
